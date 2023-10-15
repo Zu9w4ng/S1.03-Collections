@@ -63,7 +63,8 @@ public class App {
         }
 
         //create file
-        File resultFile = new File("C:/Users/david/OneDrive/Documentos/GitHub/Java-backend/S1.03/n1ex3/src/resultFile.txt");
+        String pathWrite = new File("./src/n1ex3/resultFile.txt").getAbsolutePath();
+        File resultFile = new File(pathWrite);
         try {
             if (!resultFile.createNewFile()){
                 System.out.println("The file already exists");
@@ -75,7 +76,6 @@ public class App {
 
         //write to file
         try {
-        	String pathWrite = new File("./src/n1ex3/resultFile.txt").getAbsolutePath();
             FileWriter writer = new FileWriter(pathWrite);
             writer.write(playerName + " " + score + " punts");
             writer.close();
